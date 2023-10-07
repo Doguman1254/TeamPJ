@@ -14,3 +14,9 @@ void ACP_PC_Sub_Character::OnPossess(APawn* aPawn)
 	ABLOG_S(Warning);
 	Super::OnPossess(aPawn);
 }
+
+void ACP_PC_Sub_Character::BeginPlay()
+{
+	Super::BeginPlay();
+	SetInputMode(FInputModeGameAndUI());
+}

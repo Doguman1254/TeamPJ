@@ -17,4 +17,6 @@ class PROJECT_MAIN_API ACP_PC_Sub_Character : public APlayerController
 public:
 	virtual void PostInitializeComponents() override;
 	virtual void OnPossess(APawn* aPawn) override;
+
+	virtual void BeginPlay() override;
 };

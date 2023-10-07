@@ -19,5 +19,22 @@ class PROJECT_MAIN_API ACP_GM_Sub_Character : public AGameModeBase
 	ACP_GM_Sub_Character();
 
 public:
+
+	UFUNCTION(BlueprintCallable, Category = "UMG_Game")
+	void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass);
+
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Category = "UMG_Game")
+	TSubclassOf<UUserWidget> StartingWidgetClass;
+
+	UPROPERTY()
+	UUserWidget* CurrentWidget;
+
+	UPROPERTY(VisibleAnywhere)
+	bool RunWidget;
+
+protected:
 	virtual void PostLogin(APlayerController* _NewPlayer) override;
+	virtual void BeginPlay() override;
+
+	
 };
